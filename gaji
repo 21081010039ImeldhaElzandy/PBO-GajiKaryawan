@@ -1,37 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodata Diri</title>
-</head>
-<body>
-    <fieldset>
-        <legend><h1>BIODATA DIRI</h1></legend>
-        <table border="0" cellpadding="2" cellspacing="2">
-        <tr><td>Nama Lengkap</td><td>: Imeldha Elzandy</td></td></tr> 
-        <tr><td>Nama Panggilan</td> <td>: Imel</td></tr>
-        <tr><td>Tempat & Tanggal Lahir</td> <td>: Surabaya, 20 Agustus 2003</td></tr>
-        <tr><td>Agama</td> <td>: Islam</td></tr>
-        <tr><td>NPM</td> <td>: 21081010039</td></tr>
-        <tr><td>Kewarganegaraan</td> <td>: Warga Negara Indonesia</td></tr>
-        <tr><td>Jenis Kelamin</td> <td>: Perempuan</td></tr>
-        <tr><td>Tinggi Badan / Berat Badan</td> <td>: 150 cm / 40 kg</td></tr>
-        <tr><td>Status</td> <td>: Mahasiswa</td></tr>
-        <tr><td>Prodi / Jurusan</td> <td>: Informatika</td></tr>
-        <tr><td>Fakultas</td> <td>: Ilmu Komputer</td></tr>
-        <tr><td>Perguruan Tinggi</td> <td>: UPN "Veteran" Jawa Timur</td></tr>
-        <tr><td>SMA</td> <td>: SMAN 3 Surabaya</td></tr>
-        <tr><td>SMP</td> <td>: SMPN 29 Surabaya</td></tr>
-        <tr><td>SD</td> <td>: SDN Sidotopo Wetan 4</td></tr>
-        <tr><td>TK</td> <td>: TK Tunas Harapan Jaya</td></tr>
-        <tr><td>Motto Hidup</td> <td>: Breathe. Smile. Let It Flow.</td></tr>
-        <tr><td>Hobi</td> <td>: Mendengarkan Musik</td></tr>
-        <tr><td>Cita-cita</td> <td>: PNS</td></tr>
-        <tr><td>Jarak Rumah ke Kampus</td> <td>: 12 KM</td></tr>
-        <tr><td>Alamat Email</td> <td>: imeldhaelzaa@gmail.com</td></tr>
-        </table>
-    </fieldset>
-</body>
-</html>
+package gajipegawai;
+import java.util.Scanner;
+public class GajiPegawai {
+    public static void main(String[] args) {
+        String nama, alamat;
+        int departemen, pengalaman, skill, gaji;
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Masukkan Nama = "); 
+        nama = input.nextLine();
+        System.out.print("Masukkan Alamat = ");
+        alamat = input.nextLine();
+        System.out.print("Departemen [1.IT 2.HRD 3.FINANCE] = ");
+        departemen = input.nextInt();
+        switch(departemen) {
+            case 1:
+                System.out.println("Rp 8.000.000");
+                departemen = 8000000;
+                break;
+            case 2:
+                System.out.println("Rp5.000.000");
+                departemen = 5000000;
+                break;
+            case 3:
+                System.out.println("Rp4.000.000");
+                departemen = 4000000;
+                break;
+            default:
+                System.out.println("Pilihan anda salah");
+                break;
+        } 
+        
+        System.out.print("Masukkan Pengalaman [1.Pemula; 2.Menengah; 3.Expert] = ");
+        pengalaman = input.nextInt();
+        switch(pengalaman) {
+            case 1:
+                System.out.println("Rp500.000");
+                pengalaman = 500000;
+                break;
+            case 2:
+                System.out.println("Rp1.000.000");
+                pengalaman = 1000000;
+                break;
+            case 3 :
+                System.out.println("Rp2.000.000");
+                pengalaman = 2000000;
+                break;
+            default :
+                System.out.println("Pilihan anda salah");
+                break;
+        }
+        
+        System.out.print("Masukkan Skill [1.Web; 2.Mobile; 3.Desktop] = ");
+        skill = input.nextInt();
+        switch(skill) {
+            case 1:
+                System.out.println("Rp1.000.000");
+                skill = 1000000;
+                break;
+            case 2:
+                System.out.println("Rp2.000.000");
+                skill = 2000000;
+                break;
+            case 3 :
+                System.out.println("Rp2.500.000");
+                skill = 2500000;
+                break;
+            default:
+                System.out.println("Pilihan anda salah");
+                break;
+        }
+        gaji = departemen+pengalaman+skill;
+        System.out.println("Gaji Anda = Rp "+gaji);
+    }
+}
